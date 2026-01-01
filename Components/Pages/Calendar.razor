@@ -21,7 +21,7 @@
     EndProperty="End"
     TextProperty="ShortLocal"
     ShowHeader="@_showHeader"
-    SelectedIndex="2">
+    SelectedIndex="@_defaultView">
     <RadzenDayView/>
     <RadzenWeekView/>
     <RadzenMonthView/>
@@ -29,7 +29,7 @@
 
 @code {
     bool _showHeader = true;
-    int DefaultView = OperatingSystem.IsAndroid() ? 0 : 2; // Day sur mobile, Month sur PC
+    readonly int _defaultView = OperatingSystem.IsAndroid() ? 0 : 2; // Day sur mobile, Month sur PC
 
     protected override async Task OnInitializedAsync()
     {
