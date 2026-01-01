@@ -1,0 +1,50 @@
+﻿@page "/calendar"
+
+@using RezoFrontend.Models
+@using RezoFrontend.Service
+@inject CalendarViewModel Vm
+@inject TitleService TitleService
+
+<RadzenStack
+    Orientation="Orientation.Horizontal"
+    AlignItems="AlignItems.Center"
+    Gap="0.5rem"
+    Style="border: var(--rz-grid-cell-border);height:4rem;"
+>
+    <RadzenLabel Text="Show Header:  "/>
+    <RadzenSwitch @bind-Value="@_showHeader"/>
+</RadzenStack>
+<RadzenScheduler
+    Data="@Vm.Permanences"
+    style="height: 768px;"
+    StartProperty="Start"
+    EndProperty="End"
+    TextProperty="ShortLocal"
+    ShowHeader="@_showHeader"
+    SelectedIndex="2">
+    <RadzenDayView/>
+    <RadzenWeekView/>
+    <RadzenMonthView/>
+</RadzenScheduler>
+
+@code {
+    bool _showHeader = true;
+    int DefaultView = OperatingSystem.IsAndroid() ? 0 : 2; // Day sur mobile, Month sur PC
+
+    protected override async Task OnInitializedAsync()
+    {
+        TitleService.SetTitle("Les Permanences");
+        try
+        {
+            await Vm.LoadAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            throw;
+        }
+    }
+
+}
+
+}

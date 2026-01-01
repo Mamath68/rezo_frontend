@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="RezoFrontend" mvid="9bd0f61b1a5d4b729a53c5bff2f6a077">
+  <java-to-managed>
+    <entry java-name="crc64f5f91412f90f66c5/MainActivity" managed-name="RezoFrontend.MainActivity, RezoFrontend" managed-type-token-id="33554441" />
+    <entry java-name="crc64f5f91412f90f66c5/MainApplication" managed-name="RezoFrontend.MainApplication, RezoFrontend" managed-type-token-id="33554442" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64f5f91412f90f66c5/MainActivity" managed-name="RezoFrontend.MainActivity, RezoFrontend" managed-type-token-id="33554441" />
+    <entry java-name="crc64f5f91412f90f66c5/MainApplication" managed-name="RezoFrontend.MainApplication, RezoFrontend" managed-type-token-id="33554442" />
+  </managed-to-java>
+</api>

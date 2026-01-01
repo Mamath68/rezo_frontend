@@ -1,0 +1,15 @@
+﻿@page "/about"
+@using RezoFrontend.Service
+@inject TitleService TitleService
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        TitleService.SetTitle("About");
+    }
+
+}
+<h1>About</h1>
+
+Hi guys

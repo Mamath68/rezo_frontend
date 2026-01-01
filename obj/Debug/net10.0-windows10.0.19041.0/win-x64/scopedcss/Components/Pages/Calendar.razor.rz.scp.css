@@ -1,0 +1,10 @@
+/* Fix RadzenScheduler Android */
+.rz-scheduler[b-r9gj2r2e8s],
+.rz-scheduler *[b-r9gj2r2e8s] {
+    touch-action: manipulation !important;
+    pointer-events: auto !important;
+}
+
+body[b-r9gj2r2e8s] {
+    overscroll-behavior: none;
+}
